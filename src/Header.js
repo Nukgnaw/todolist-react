@@ -19,6 +19,7 @@ class Header extends React.Component {
   }
 
   handleChange(event) {
+    // like a setter in OOP
     this.setState({value: event.target.value});
   }
 
@@ -26,7 +27,7 @@ class Header extends React.Component {
     return(
       <div className="header">
         <h2>My To Do List</h2>
-        <input 
+        <input // It's a controlled component: https://reactjs.org/docs/forms.html#controlled-components
           type="text" 
           id="myInput" 
           placeholder="What to do?" 

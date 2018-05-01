@@ -15,8 +15,10 @@ class App extends Component {
   addTodo(value) {
     const newTodo = {
       text: value,
-      key: Date.now()
+      key: Date.now() // The idea is from: https://www.kirupa.com/react/simple_todo_app_react.htm
     };
+
+    // prevState "should not be directly mutated": https://reactjs.org/docs/react-component.html#setstate
     this.setState(prevState => ({
       // concat() does not change prevState.todos
       todos: prevState.todos.concat(newTodo)

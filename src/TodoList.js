@@ -8,9 +8,12 @@ class TodoList extends React.Component {
       <ul>{this.props.todos.map((todo, index) => 
         <TodoItem 
           id={index}
-          value={todo.text}
-          key={todo.key} 
-          deleteTodo={this.props.deleteTodo}
+          key={todo.key} // About keys: https://reactjs.org/docs/lists-and-keys.html#keys
+          
+          value={todo.text} 
+          deleteTodo={this.props.deleteTodo} 
+          // Or use an arrow function to pass paras: 
+          // https://reactjs.org/docs/faq-functions.html#example-passing-params-using-arrow-functions
         />
       )}</ul>
     );
